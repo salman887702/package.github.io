@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+       <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+       <title>Document</title>
+</head>
+<style>
+      a.cr-btn, button.cr-btn, .cr-btn {
+   display: inline-block;
+   background: #008fd5;
+   padding: 11px 30px;
+   color: #fff;
+   font-weight: 600;
+   text-transform: uppercase;
+   font-size: 15px;
+   position: relative;
+   vertical-align: middle;
+   overflow: hidden;
+   border: 1px solid #008fd5;
+   -webkit-transition: border-color 0.5s ease-in-out 0s;
+   -moz-transition: border-color 0.5s ease-in-out 0s;
+   -ms-transition: border-color 0.5s ease-in-out 0s;
+   -o-transition: border-color 0.5s ease-in-out 0s;
+   transition: border-color 0.5s ease-in-out 0s; }
+   a.cr-btn span, button.cr-btn span, .cr-btn span {
+     position: relative;
+     line-height: auto; }
+   a.cr-btn:before, button.cr-btn:before, .cr-btn:before {
+     content: "";
+     left: 50%;
+     top: 50%;
+     height: 400px;
+     width: 400px;
+     position: absolute;
+     -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+     -o-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     -webkit-transition: box-shadow 0.5s ease-in-out 0s;
+     -moz-transition: box-shadow 0.5s ease-in-out 0s;
+     -ms-transition: box-shadow 0.5s ease-in-out 0s;
+     -o-transition: box-shadow 0.5s ease-in-out 0s;
+     -webkit-transition: -webkit-box-shadow 0.5s ease-in-out 0s;
+     transition: -webkit-box-shadow 0.5s ease-in-out 0s;
+     transition: box-shadow 0.5s ease-in-out 0s;
+     transition: box-shadow 0.5s ease-in-out 0s, -webkit-box-shadow 0.5s ease-in-out 0s;
+     border-radius: 100%; }
+   a.cr-btn:hover, button.cr-btn:hover, .cr-btn:hover {
+     color: #fff;
+     border-color: #0c2139; }
+     a.cr-btn:hover:before, button.cr-btn:hover:before, .cr-btn:hover:before {
+       -webkit-box-shadow: inset 0 0 0 400px #0c2139;
+       -moz-box-shadow: inset 0 0 0 400px #0c2139;
+       -ms-box-shadow: inset 0 0 0 400px #0c2139;
+       -o-box-shadow: inset 0 0 0 400px #0c2139;
+       box-shadow: inset 0 0 0 400px #0c2139; }
+   a.cr-btn.cr-btn--lg, button.cr-btn.cr-btn--lg, .cr-btn.cr-btn--lg {
+     padding: 12px 30px; }
+   a.cr-btn.cr-btn--sm, button.cr-btn.cr-btn--sm, .cr-btn.cr-btn--sm {
+     padding: 8px 40px; }
+   a.cr-btn.cr-btn--transparent, button.cr-btn.cr-btn--transparent, .cr-btn.cr-btn--transparent {
+     font-weight: 600;
+     font-size: 14px;
+     color: #646464;
+     background: transparent;
+     border-color: #9f9f9f; }
+     a.cr-btn.cr-btn--transparent:hover, button.cr-btn.cr-btn--transparent:hover, .cr-btn.cr-btn--transparent:hover {
+       border-color: #008fd5;
+       color: #fff; }
+       a.cr-btn.cr-btn--transparent:hover:before, button.cr-btn.cr-btn--transparent:hover:before, .cr-btn.cr-btn--transparent:hover:before {
+         -webkit-box-shadow: inset 0 0 0 400px #008fd5;
+         -moz-box-shadow: inset 0 0 0 400px #008fd5;
+         -ms-box-shadow: inset 0 0 0 400px #008fd5;
+         -o-box-shadow: inset 0 0 0 400px #008fd5;
+         box-shadow: inset 0 0 0 400px #008fd5; }
+
+ /*Pricebox  */
+ .pricebox {
+   text-align: center;
+   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   margin-top: 30px;
+   -webkit-transition: all 0.3s ease-in-out 0s;
+   -o-transition: all 0.3s ease-in-out 0s;
+   transition: all 0.3s ease-in-out 0s; }
+   .pricebox-header {
+     background: #fafafa; }
+   .pricebox-title {
+     padding: 30px 20px;
+     position: relative;
+     z-index: 1;
+     margin-bottom: 0;
+     text-transform: uppercase;
+     font-weight: 400;
+     letter-spacing: 1px;
+     -webkit-transition: all 0.3s ease-in-out 0s;
+     -o-transition: all 0.3s ease-in-out 0s;
+     transition: all 0.3s ease-in-out 0s; }
+     .pricebox-title::before {
+       content: "";
+       position: absolute;
+       left: 0;
+       top: 0;
+       height: 100%;
+       width: 100%;
+       background: #eeeeee;
+       z-index: -1;
+       -webkit-transform: rotate(-5deg) scale(1.5);
+       -ms-transform: rotate(-5deg) scale(1.5);
+       transform: rotate(-5deg) scale(1.5);
+       margin-top: -20px;
+       -webkit-transition: all 0.3s ease-in-out 0s;
+       -o-transition: all 0.3s ease-in-out 0s;
+       transition: all 0.3s ease-in-out 0s; }
+   .pricebox-price {
+     font-size: 30px;
+     font-weight: 300;
+     padding: 45px 20px 30px 20px; }
+     .pricebox-price span {
+       font-size: 14px;
+           line-height: 1.3;
+       font-weight: 400; }
+       
+   .pricebox-body {
+     padding: 30px 20px; }
+     .pricebox-body ul {
+       margin-bottom: 0;
+       padding-left: 0;
+       list-style: none; }
+       .pricebox-body ul li {
+         list-style: none; }
+         .pricebox-body ul li:not(:last-child) {
+           margin-bottom: 8px; }
+   .pricebox-footer {
+     padding: 0 20px 40px 20px; }
+   .pricebox.is-active {
+     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+   .pricebox.is-active .pricebox-title {
+     color: #ffffff; }
+     .pricebox.is-active .pricebox-title::before {
+       background: #008fd5; }
+   .pricebox:hover {
+     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+   .pricebox:hover .pricebox-title {
+     color: #ffffff; }
+     .pricebox:hover .pricebox-title::before {
+       background: #008fd5; }
+</style>
+<body>
+     
+       <div id="pricing-area" class="pricing-area section-padding--xlg bg--white">
+              <div class="container">
+                     <div class="row">
+                            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12 offset-0">
+                                   <div class="section-title text-center">
+                                          <h4>PRICING TABLE</h4>
+                                          <h2>OUR DEMANDABLE
+                                                 <span class="color--theme">PRICEBOX</span>
+                                          </h2>
+                                          <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam remaperiam,
+                                                 eaque ipsa quae</p>
+                                   </div>
+                            </div>
+                     </div>
+                     <div class="row mt-3">
+
+                            <!-- Pricebox -->
+                            <div class="col-lg-3 col-md-6">
+                                   <div class="pricebox">
+                                          <div class="pricebox-header">
+                                                 <h5 class="pricebox-title">Basic</h5>
+
+                                                 <div class="pricebox-price">
+                                                        $10.50<span>/Mon</span>
+                                                 </div>
+                                          </div>
+                                          <div class="pricebox-body">
+                                                 <ul>
+                                                        <li>6 Updates</li>
+                                                        <li>5 Video</li>
+                                                        <li>6 Database</li>
+                                                        <li>Free Domain</li>
+                                                        <li>24/H Support</li>
+                                                 </ul>
+                                          </div>
+                                          <div class="pricebox-footer">
+                                                 <a href="#" class="cr-btn cr-btn--sm">
+                                                        <span>Hire Us</span>
+                                                 </a>
+                                          </div>
+                                   </div>
+                            </div>
+                            <!--// Pricebox -->
+
+                            <!-- Pricebox -->
+                            <div class="col-lg-3 col-md-6">
+                                   <div class="pricebox">
+                                          <div class="pricebox-header">
+                                                 <h5 class="pricebox-title">Standard</h5>
+
+                                                 <div class="pricebox-price">
+                                                        $15.49<span>/Mon</span>
+                                                 </div>
+                                          </div>
+                                          <div class="pricebox-body">
+                                                 <ul>
+                                                        <li>6 Updates</li>
+                                                        <li>5 Video</li>
+                                                        <li>6 Database</li>
+                                                        <li>Free Domain</li>
+                                                        <li>24/H Support</li>
+                                                 </ul>
+                                          </div>
+                                          <div class="pricebox-footer">
+                                                 <a href="#" class="cr-btn cr-btn--sm">
+                                                        <span>Hire Us</span>
+                                                 </a>
+                                          </div>
+                                   </div>
+                            </div>
+                            <!--// Pricebox -->
+
+                            <!-- Pricebox -->
+                            <div class="col-lg-3 col-md-6">
+                                   <div class="pricebox is-active">
+                                          <div class="pricebox-header">
+                                                 <h5 class="pricebox-title">Unlimited</h5>
+
+                                                 <div class="pricebox-price">
+                                                        $25.49<span>/Mon</span>
+                                                 </div>
+                                          </div>
+                                          <div class="pricebox-body">
+                                                 <ul>
+                                                        <li>6 Updates</li>
+                                                        <li>5 Video</li>
+                                                        <li>6 Database</li>
+                                                        <li>Free Domain</li>
+                                                        <li>24/H Support</li>
+                                                 </ul>
+                                          </div>
+                                          <div class="pricebox-footer">
+                                                 <a href="#" class="cr-btn cr-btn--sm">
+                                                        <span>Hire Us</span>
+                                                 </a>
+                                          </div>
+                                   </div>
+                            </div>
+                            <!--// Pricebox -->
+
+                            <!-- Pricebox -->
+                            <div class="col-lg-3 col-md-6">
+                                   <div class="pricebox">
+                                          <div class="pricebox-header">
+                                                 <h5 class="pricebox-title">Professional</h5>
+
+                                                 <div class="pricebox-price">
+                                                        $39.99<span>/Mon</span>
+                                                 </div>
+                                          </div>
+                                          <div class="pricebox-body">
+                                                 <ul>
+                                                        <li>6 Updates</li>
+                                                        <li>5 Video</li>
+                                                        <li>6 Database</li>
+                                                        <li>Free Domain</li>
+                                                        <li>24/H Support</li>
+                                                 </ul>
+                                          </div>
+                                          <div class="pricebox-footer">
+                                                 <a href="#" class="cr-btn cr-btn--sm">
+                                                        <span>Hire Us</span>
+                                                 </a>
+                                          </div>
+                                   </div>
+                            </div>
+                            <!--// Pricebox -->
+
+                     </div>
+              </div>
+       </div>
+      
+</body>
+</html>
